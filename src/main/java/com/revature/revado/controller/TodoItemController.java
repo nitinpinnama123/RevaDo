@@ -36,4 +36,10 @@ public class TodoItemController {
         item.setDescription(item.getDescription());
         return item;
     }
+
+    @DeleteMapping
+    public void deleteTodo(@RequestBody TodoItem item)
+    {
+        item.
+    }
 }

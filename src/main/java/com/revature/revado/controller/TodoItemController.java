@@ -1,6 +1,7 @@
 package com.revature.revado.controller;
 
 import com.revature.revado.entity.TodoItem;
+import com.revature.revado.service.TodoItemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,9 +38,14 @@ public class TodoItemController {
         return item;
     }
 
-    @DeleteMapping
-    public void deleteTodo(@RequestBody TodoItem item)
+    @DeleteMapping("/{id}")
+    public ResponseEntity<TodoItem> deleteTodo(@RequestBody TodoItem item)
     {
-        item.
+        TodoItemService todoService = null;
+        todoService.deleteTodo(item.getId());
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header("custom-header", "custom value")
+                .body(item);
     }
 }

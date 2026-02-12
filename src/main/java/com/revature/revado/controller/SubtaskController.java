@@ -2,9 +2,9 @@ package com.revature.revado.controller;
 
 import com.revature.revado.entity.Subtask;
 import com.revature.revado.entity.TodoItem;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author $ {USER}
@@ -21,4 +21,5 @@ public class SubtaskController {
         task.setComplete(true);
         return task;
     }
+
 }

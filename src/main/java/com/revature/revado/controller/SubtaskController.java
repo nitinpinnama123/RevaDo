@@ -22,4 +22,13 @@ public class SubtaskController {
         return task;
     }
 
+    @PostMapping
+    public ResponseEntity<TodoItem> addSubtask(@RequestBody Subtask subtask)
+    {
+        subtask.setSubtaskId(subtask.getSubtaskId());
+        subtask.setComplete(true);
+        subtask.setSubtaskDesc(subtask.getSubtaskDesc());
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).header("custom-header", "custom value").body(item);
+    }
+
 }

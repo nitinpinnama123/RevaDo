@@ -28,4 +28,12 @@ public class TodoItemController {
         item.setDescription(item.getDescription());
         return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).header("custom-header", "custom value").body(item);
     }
+
+    @PatchMapping
+    public TodoItem editTodo(@RequestBody TodoItem item)
+    {
+        item.setComplete(item.isComplete());
+        item.setDescription(item.getDescription());
+        return item;
+    }
 }

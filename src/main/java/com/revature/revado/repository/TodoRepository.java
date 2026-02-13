@@ -1,13 +1,15 @@
 package com.revature.revado.repository;
 
+import com.revature.revado.entity.TodoItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
 /**
  * @author $ {USER}
  **/
-public class TodoRepository {
-    public boolean existsById(int id) {
-        return true;
-    }
+@Repository
+public interface TodoRepository extends JpaRepository<TodoItem, UUID> {
 
-    public void deleteById(int id) {
-    }
 }

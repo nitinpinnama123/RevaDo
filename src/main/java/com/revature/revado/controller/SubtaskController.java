@@ -2,6 +2,9 @@ package com.revature.revado.controller;
 
 import com.revature.revado.entity.Subtask;
 import com.revature.revado.entity.TodoItem;
+import com.revature.revado.repository.SubtaskRepository;
+import com.revature.revado.service.SubtaskService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,8 +14,10 @@ import org.springframework.web.bind.annotation.*;
  **/
 
 @RestController
-@RequestMapping("/todoItem/{id}/subtask")
+@RequestMapping("/items/{id}/subtasks")
+@RequiredArgsConstructor
 public class SubtaskController {
+    private final SubtaskService subtaskService;
     @GetMapping
     public Subtask getSubtaskInformation(){
         Subtask task = new Subtask();

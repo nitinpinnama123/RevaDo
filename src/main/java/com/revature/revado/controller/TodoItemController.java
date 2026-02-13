@@ -2,6 +2,7 @@ package com.revature.revado.controller;
 
 import com.revature.revado.entity.TodoItem;
 import com.revature.revado.service.TodoItemService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.*;
  * @author $ {USER}
  **/
 @RestController
-@RequestMapping("/todoItem")
+@RequestMapping("/items")
+@RequiredArgsConstructor
 public class TodoItemController {
+    private final TodoItemService todoItemService;
     @GetMapping
     public TodoItem getTodoItemInformation(){
         TodoItem item = new TodoItem();
@@ -42,7 +45,7 @@ public class TodoItemController {
     public ResponseEntity<TodoItem> deleteTodo(@RequestBody TodoItem item)
     {
         TodoItemService todoService = null;
-        todoService.deleteTodo(item.getId());
+        //todoService.deleteTodo(item.getId());
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .header("custom-header", "custom value")

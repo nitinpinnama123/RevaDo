@@ -1,5 +1,7 @@
 package com.revature.revado.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,7 +9,8 @@ import lombok.NoArgsConstructor;
  * @author $ {USER}
  **/
 @Data
-@NoArgsConstructor
+@Entity
+@Table(name = "items")
 public class TodoItem {
     private int id;
     private String description;

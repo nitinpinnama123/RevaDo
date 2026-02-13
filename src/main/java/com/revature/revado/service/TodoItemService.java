@@ -1,22 +1,15 @@
 package com.revature.revado.service;
 
 import com.revature.revado.repository.TodoRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
  * @author $ {USER}
  **/
 @Service
+@RequiredArgsConstructor
 public class TodoItemService {
-    private final TodoRepository todoRepository;
-    public TodoItemService(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
-    }
+    private final TodoRepository todoRepo;
 
-    public void deleteTodo(int id) {
-        if (!todoRepository.existsById(id)) {
-            throw new RuntimeException("Todo not found with id: " + id);
-        }
-        todoRepository.deleteById(id);
-    }
 }

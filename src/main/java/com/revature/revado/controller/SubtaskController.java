@@ -23,7 +23,7 @@ public class SubtaskController {
         Subtask task = new Subtask();
         task.setSubtaskId(1);
         task.setSubtaskDesc("");
-        task.setComplete(true);
+        task.setStatus();
         return task;
     }
 
